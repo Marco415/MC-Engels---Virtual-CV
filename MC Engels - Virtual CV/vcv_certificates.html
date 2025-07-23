@@ -1,0 +1,74 @@
+<!--Marco Engels 45277427-->
+<!DOCTYPE html>
+<html lang="en">
+	<head>		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="Marco Engels">
+		<meta charset="UTF-8">
+		<title>MC Engels Virtual CV - Certificates</title>
+		
+		<!--link to style sheets and icon-->
+		<link rel="stylesheet" href="styles_nav.css">
+		<link rel="stylesheet" href="styles_text.css">
+		<link rel="stylesheet" href="styles_visuals.css">
+		<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+		
+		<!--header section-->
+		<header>
+			<div class="heading">
+				<h1>Marco Engels Virtual Curriculum Vitae</h1>
+			</div>
+		</header>
+	</head>
+	<body>
+		<!--navigation bar-->
+		<nav>
+			<a href="vcv_home.html" title="Go To Home Page"><b>Home</b></a>
+			<a href="vcv_resume.html" title="Go To Resume Page"><b>Resume</b></a>
+			<a href="vcv_projects.html" title="Go To Projects Page"><b>Projects</b></a>
+			<a href="vcv_certificates.html" title="Go To Certificates Page"><b>Certificates</b></a>
+		</nav>
+		
+		<!--certificate selection-->
+		<div style="text-align:center; padding:5px;">
+			<form>
+				<label for="certificateSelect">Select a certificate to view: </label>
+				<select id="certificateSelect" name="certificate">
+					<option value="cybersecurity" selected>Introduction to Cyber Security</option>
+					<option value="packettracer">Introduction to Packet Tracer</option>
+					<option value="goldenkey">Golden Key Member Certificate</option>
+				</select>
+			</form>
+		</div>
+		
+		<!--vertificate display-->
+		<div>
+			<img src="images/Introduction to Cyber Security certificate.jpg" alt="Introduction to Cyber Security certificate" id="certificateDisplay" class="image">
+		</div>
+		
+		<!--function to load images-->
+		<script>
+			const docSelect = document.getElementById("certificateSelect");
+			const docDisplay = document.getElementById("certificateDisplay");
+
+			function updateDocument() {
+				const selectedDoc = docSelect.value;
+				var doc, description;
+				if (selectedDoc == "cybersecurity") {
+					doc="images/Introduction to Cyber Security certificate.jpg";
+					description="Introduction to Cyber Security certificate";
+				} else if (selectedDoc == "packettracer") {
+					doc="images/Introduction_to_Packet_Tracer_certificate.jpg";
+					description="Introduction_to_Packet_Tracer_certificate";
+				} else {
+					doc="images/Golden Key Member Certificate - Marthinus Christoffel Engels.jpg";
+					description="Golden Key Member Certificate - Marthinus Christoffel Engels";
+				}
+				docDisplay.setAttribute("src", doc);
+				docDisplay.setAttribute("alt", description);
+			}
+			docSelect.addEventListener("change", updateDocument)
+			updateDocument();
+		</script>
+	</body>
+</html>
