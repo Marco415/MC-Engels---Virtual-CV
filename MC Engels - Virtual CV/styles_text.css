@@ -1,0 +1,12 @@
+/*-------------
+text formatting
+-------------*/
+body {
+	font-size: 16px;
+	font-family: calibri;
+}
+
+h1 {
+	text-align: center;
+	font-family: calibri;
+}
