@@ -1,0 +1,85 @@
+<!--Marco Engels 45277427-->
+<!DOCTYPE html>
+<html lang="en">
+	<head>		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="Marco Engels">
+		<meta charset="UTF-8">
+		<title>MC Engels Virtual CV - Projects</title>
+		
+		<!--link to style sheets and icon-->
+		<link rel="stylesheet" href="styles_nav.css">
+		<link rel="stylesheet" href="styles_text.css">
+		<link rel="stylesheet" href="styles_visuals.css">
+		<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+		
+		<!--header section-->
+		<header>
+			<div class="heading">
+				<h1>Marco Engels Virtual Curriculum Vitae</h1>
+			</div>
+		</header>
+	</head>
+	<body>
+		<!--navigation bar-->
+		<nav>
+			<a href="vcv_home.html" title="Go To Home Page"><b>Home</b></a>
+			<a href="vcv_resume.html" title="Go To Resume Page"><b>Resume</b></a>
+			<a href="vcv_projects.html" title="Go To Projects Page"><b>Projects</b></a>
+			<a href="vcv_certificates.html" title="Go To Certificates Page"><b>Certificates</b></a>
+		</nav>
+		
+		<!--project selection-->
+		<div style="text-align:center; padding:5px;">
+			<form>
+				<label for="projectSelect">Select a project to view: </label>
+				<select id="projectSelect" name="project">
+					<option value="securitycompany" selected>Eagle Eye Security System</option>
+					<option value="dungeonexplorer">Dungeon Explorer</option>
+				</select>
+			</form>
+		</div>
+		
+		<!--project info display-->
+		<div>
+			<!--project description-->
+			<p id="projectDescription" style="text-align:justify;">
+				This project was done as part of a module group project where we had to design and create an application. 
+				Our group decided on a security company management system. 
+				We created a fictional company, Eagle Eye Security, and created an application to manage shifts, sectors, incidents, and equipment.
+			</p>
+			<br>
+			
+			<!--repository link-->
+			<p style="text-align:center;">
+				<a href="https://github.com/Marco415/Eagle-Eye-Security-Management-App" id="projectLink" target="_blank">Click here to view the project</a>
+			</p>
+		</div>
+		
+		<!--function to load project details-->
+		<script>
+			const projectSelect = document.getElementById("projectSelect");
+			const projectLink = document.getElementById("projectLink");
+
+			function updateDocument() {
+				const selectedProject = projectSelect.value;
+				var description, link;
+				if (selectedProject == "securitycompany") {
+					description="This project was done as part of a module group project where we had to design and create an application. " + 
+						"Our group decided on a security company management system. " + 
+						"We created a fictional company, Eagle Eye Security, and created an application to manage shifts, sectors, incidents, and equipment.";
+					link="https://github.com/Marco415/Eagle-Eye-Security-Management-App";
+				} else {
+					description="This project was done as a creative project for a module to test our understanding of coding concepts. " +
+					"I created a text-based dungeon explorer where you fight a monster. If you defeat the monster, you move on to the next round. " +
+					"The monsters keep getting slightly more difficult with each round, but the player can also choose upgrades after each round won.";
+					link="https://github.com/Marco415/Dungeon-Explorer";
+				}
+				document.getElementById("projectDescription").innerText = description;
+				projectLink.setAttribute("href", link);
+			}
+			projectSelect.addEventListener("change", updateDocument)
+			updateDocument();
+		</script>
+	</body>
+</html>
