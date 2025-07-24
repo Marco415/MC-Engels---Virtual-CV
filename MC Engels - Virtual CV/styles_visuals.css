@@ -16,7 +16,7 @@ header class
 	animation-duration: 4s;
 	animation-iteration-count: infinite;
 	color: white;
-	padding: 20px;
+	padding: 1px;
 	font-size: 2.5vw;
 }
 
@@ -30,17 +30,16 @@ body text on home page
 	width: 70%;
 	margin: auto;
 	float: left;
-	border-left-style: solid;
-	border-left-color: midnightblue;
-	border-left-width: 2px;
 }
 
 /*----------------
 photo on home page
 ----------------*/
-aside {
+.aside {
 	float: left;
 	width: 20%;
+	height: 100%;
+	background-color: lightblue;
 }
 
 /*---------------
@@ -54,6 +53,20 @@ columns home page
 	width: 50%;
 }
 
+/*--------------
+border animation
+--------------*/
+@keyframes border_color {
+	0%	{border-image: conic-gradient(midnightblue, midnightblue, midnightblue, midnightblue, midnightblue, midnightblue, midnightblue, midnightblue, midnightblue, midnightblue) 1;}
+	10%	{border-image: conic-gradient(dodgerblue, midnightblue, midnightblue, midnightblue, midnightblue 180deg, dodgerblue 180deg, midnightblue, midnightblue, midnightblue, midnightblue) 1;}
+	20%	{border-image: conic-gradient(midnightblue, dodgerblue, midnightblue, midnightblue, midnightblue, midnightblue, dodgerblue, midnightblue, midnightblue, midnightblue) 1;}
+	30%	{border-image: conic-gradient(midnightblue, midnightblue, dodgerblue, midnightblue, midnightblue, midnightblue, midnightblue, dodgerblue, midnightblue, midnightblue) 1;}
+	40%	{border-image: conic-gradient(midnightblue, midnightblue, midnightblue, dodgerblue, midnightblue, midnightblue, midnightblue, midnightblue, dodgerblue, midnightblue) 1;}
+	50%	{border-image: conic-gradient(midnightblue, midnightblue, midnightblue, midnightblue, dodgerblue  180deg, midnightblue  180deg, midnightblue, midnightblue, midnightblue, dodgerblue) 1;}
+	60%	{border-image: conic-gradient(midnightblue, midnightblue, midnightblue, midnightblue, dodgerblue  180deg, midnightblue  180deg, midnightblue, midnightblue, midnightblue, dodgerblue) 1;}
+	65%	{border-image: conic-gradient(midnightblue, midnightblue, midnightblue, midnightblue, midnightblue, midnightblue, midnightblue, midnightblue, midnightblue, midnightblue) 1;}
+}
+
 /*------------
 image display
 ------------*/
@@ -62,8 +75,12 @@ image display
 	height: auto;
 	display: block;
 	border-style: solid;
-	border-color: midnightblue;
-	border-width: 2px;
+	border-width: 4px;
 	margin-left: auto;
 	margin-right: auto;
+	border-image: conic-gradient(from 324.7deg, midnightblue, midnightblue, midnightblue, midnightblue, midnightblue, midnightblue, midnightblue, midnightblue, midnightblue, midnightblue) 1;
+	animation-name: border_color;
+	animation-duration: 4s;
+	animation-iteration-count: infinite;
+	animation-delay: 1s
 }

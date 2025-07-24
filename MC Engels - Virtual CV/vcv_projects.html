@@ -20,7 +20,7 @@
 			</div>
 		</header>
 	</head>
-	<body>
+	<body style="background-color:aliceblue;">
 		<!--navigation bar-->
 		<nav>
 			<a href="vcv_home.html" title="Go To Home Page"><b>Home</b></a>
@@ -33,7 +33,7 @@
 		<div style="text-align:center; padding:5px;">
 			<form>
 				<label for="projectSelect">Select a project to view: </label>
-				<select id="projectSelect" name="project">
+				<select id="projectSelect" name="project" title="Select a project from the list">
 					<option value="securitycompany" selected>Eagle Eye Security System</option>
 					<option value="dungeonexplorer">Dungeon Explorer</option>
 				</select>
@@ -43,16 +43,16 @@
 		<!--project info display-->
 		<div>
 			<!--project description-->
-			<p id="projectDescription" style="text-align:justify;">
+			<h3 style="text-align:center;">Project description</h3>
+			<p id="projectDescription" style="text-align:justify; padding-left:10%; padding-right:10%">
 				This project was done as part of a module group project where we had to design and create an application. 
 				Our group decided on a security company management system. 
-				We created a fictional company, Eagle Eye Security, and created an application to manage shifts, sectors, incidents, and equipment.
+				We created a fictional company, Eagle Eye Security, and created an application to manage shifts, sectors, incidents, equipment, and personnel.
 			</p>
-			<br>
 			
 			<!--repository link-->
 			<p style="text-align:center;">
-				<a href="https://github.com/Marco415/Eagle-Eye-Security-Management-App" id="projectLink" target="_blank">Click here to view the project</a>
+				<a href="https://github.com/Marco415/Eagle-Eye-Security-Management-App" id="projectLink" target="_blank" title="Go to GitHub repository">Click here to view the project</a>
 			</p>
 		</div>
 		
@@ -67,7 +67,7 @@
 				if (selectedProject == "securitycompany") {
 					description="This project was done as part of a module group project where we had to design and create an application. " + 
 						"Our group decided on a security company management system. " + 
-						"We created a fictional company, Eagle Eye Security, and created an application to manage shifts, sectors, incidents, and equipment.";
+						"We created a fictional company, Eagle Eye Security, and created an application to manage shifts, sectors, incidents, equipment, and personnel.";
 					link="https://github.com/Marco415/Eagle-Eye-Security-Management-App";
 				} else {
 					description="This project was done as a creative project for a module to test our understanding of coding concepts. " +
