@@ -10,3 +10,15 @@ h1 {
 	text-align: center;
 	font-family: calibri;
 }
+
+h3 {
+	font-size: 1.8vw;
+}
+
+/*------------
+drop down list
+------------*/
+select {
+	font-size: 1.5vw;
+	font-family: calibri;	
+}
