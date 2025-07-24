@@ -53,3 +53,17 @@ columns home page
 .mylists > div {
 	width: 50%;
 }
+
+/*------------
+image display
+------------*/
+.image {
+	width: 80%;
+	height: auto;
+	display: block;
+	border-style: solid;
+	border-color: midnightblue;
+	border-width: 2px;
+	margin-left: auto;
+	margin-right: auto;
+}
