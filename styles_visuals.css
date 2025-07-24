@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 /*--------------
 header animation
 --------------*/
@@ -17,7 +21,8 @@ header class
 	animation-iteration-count: infinite;
 	color: white;
 	padding: 1px;
-	font-size: 2.5vw;
+	font-size: 32px;
+	width: 100%;
 }
 
 /*--------------------
@@ -45,12 +50,24 @@ photo on home page
 /*---------------
 columns home page
 ---------------*/
-.mylists {
-	display: flex;
+.list_left {
+	padding-right: 10px;
+	padding-left: 10px;
+	float: left;
+	width: 50%;
 }
 
-.mylists > div {
+.list_right {
+	padding-right: 10px;
+	padding-left: 10px;
+	float: left;
 	width: 50%;
+}
+
+@media screen and (max-width: 800px) {
+	.list_left, .list_right {
+		width: 100%;
+	}
 }
 
 /*--------------
