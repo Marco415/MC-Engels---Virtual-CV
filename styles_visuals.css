@@ -19,7 +19,7 @@ header class
 	animation-name: heading_color;
 	animation-duration: 4s;
 	animation-iteration-count: infinite;
-	color: white;
+	color: #FCBA12;
 	padding: 0.1px;
 	font-size: 2.7vw;
 	width: 100%;
@@ -44,7 +44,7 @@ photo on home page
 	float: left;
 	width: 20%;
 	height: 100%;
-	background-color: lightblue;
+	background-color: #91b0ed;
 }
 
 /*---------------

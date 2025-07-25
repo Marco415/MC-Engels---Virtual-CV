@@ -2,7 +2,7 @@
 nav formatting
 ------------*/
 nav {
-	background: lightblue;
+	background: #91b0ed;
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
@@ -21,5 +21,5 @@ nav > a {
 nav > a:hover {
 	transition: 0.25s;
 	background: midnightblue;
-	color: white;
+	color: #FCBA12;
 }
