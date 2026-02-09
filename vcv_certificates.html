@@ -37,37 +37,122 @@
 					<option value="cybersecurity" selected>Introduction to Cyber Security</option>
 					<option value="packettracer">Introduction to Packet Tracer</option>
 					<option value="goldenkey">Golden Key Member Certificate</option>
+					<option value="matlab">MATLAB Onramps</option>
 				</select>
+				
+				<!-- MATLAB sub-selection -->
+				<div id="matlabSelectContainer" style="margin-top:10px; display:none;">
+					<label for="matlabSelect">Select MATLAB certificate: </label>
+					<select id="matlabSelect">
+						<option value="app_building">App Building Onramp</option>
+						<option value="computer_vision">Computer Vision Onramp</option>
+						<option value="core_matlab_skills">Core MATLAB Skills</option>
+						<option value="data_analysis">Data Analysis in MATLAB</option>
+						<option value="deep_learning">Deep Learning Onramp</option>
+						<option value="image_processing">Image Processing Onramp</option>
+						<option value="machine_learning">Machine Learning Onramp</option>
+						<option value="matlab_onramp">MATLAB Onramp</option>
+						<option value="statistics">Statistics Onramp</option>
+						<option value="visualization">Visualization in MATLAB</option>
+					</select>
+				</div>
 			</form>
 		</div>
 		
-		<!--vertificate display-->
-		<div>
-			<img src="images/Introduction to Cyber Security certificate.jpg" alt="Introduction to Cyber Security certificate" id="certificateDisplay" class="image">
+		<!--certificate display-->
+		<div style="text-align:center;">
+			<img src="images/Introduction_to_Cyber_Security_certificate.jpg" alt="Introduction to Cyber Security certificate" id="certificateDisplay" class="image">
 		</div>
 		
 		<!--function to load images-->
 		<script>
 			const docSelect = document.getElementById("certificateSelect");
+			const matlabSelect = document.getElementById("matlabSelect");
+			const matlabContainer = document.getElementById("matlabSelectContainer");
 			const docDisplay = document.getElementById("certificateDisplay");
 
 			function updateDocument() {
 				const selectedDoc = docSelect.value;
-				var doc, description;
+				var src, alt;
+				
+				// Hide MATLAB dropdown by default
+				matlabContainer.style.display = "none";
+				
 				if (selectedDoc == "cybersecurity") {
-					doc="images/Introduction to Cyber Security certificate.jpg";
-					description="Introduction to Cyber Security certificate";
+					src = "images/Introduction_to_Cyber_Security_certificate.jpg";
+					alt = "Introduction to Cyber Security certificate";
+
 				} else if (selectedDoc == "packettracer") {
-					doc="images/Introduction_to_Packet_Tracer_certificate.jpg";
-					description="Introduction_to_Packet_Tracer_certificate";
-				} else {
-					doc="images/Golden Key Member Certificate - Marthinus Christoffel Engels.jpg";
-					description="Golden Key Member Certificate - Marthinus Christoffel Engels";
+					src = "images/Introduction_to_Packet_Tracer_certificate.jpg";
+					alt = "Introduction to Packet Tracer certificate";
+
+				} else if (selectedDoc == "goldenkey") {
+					src = "images/Golden_Key_Member_Certificate_-_Marthinus_Christoffel_Engels.jpg";
+					alt = "Golden Key Member Certificate";
+				} else if (selectedDoc == "matlab") {
+					// Show MATLAB dropdown
+					matlabContainer.style.display = "block";
+					updateMatlabCertificate();
+					return;
 				}
-				docDisplay.setAttribute("src", doc);
-				docDisplay.setAttribute("alt", description);
+				
+				docDisplay.setAttribute("src", src);
+				docDisplay.setAttribute("alt", alt);
 			}
+			
+			function updateMatlabCertificate() {
+				const matlabValue = matlabSelect.value;
+
+				let src = "";
+				let alt = "";
+
+				if (matlabValue == "app_building") {
+					src = "images/matlab/App Building Onramp.jpg";
+					alt = "App Building Onramp Certificate";
+					
+				} else if (matlabValue == "computer_vision") {
+					src = "images/matlab/Computer Vision Onramp.jpg";
+					alt = "Computer Vision Onramp Certificate";
+					
+				} else if (matlabValue == "core_matlab_skills") {
+					src = "images/matlab/Core MATLAB Skills.jpg";
+					alt = "Core MATLAB Skills Certificate";
+					
+				} else if (matlabValue == "data_analysis") {
+					src = "images/matlab/Data Analysis in MATLAB.jpg";
+					alt = "Data Analysis in MATLAB Certificate";
+					
+				} else if (matlabValue == "deep_learning") {
+					src = "images/matlab/Deep Learning Onramp.jpg";
+					alt = "Deep Learning Onramp Certificate";
+					
+				} else if (matlabValue == "image_processing") {
+					src = "images/matlab/Image Processing Onramp.jpg";
+					alt = "Image Processing Onramp Certificate";
+					
+				} else if (matlabValue == "machine_learning") {
+					src = "images/matlab/Machine Learning Onramp.jpg";
+					alt = "Machine Learning Onramp Certificate";
+					
+				} else if (matlabValue == "matlab_onramp") {
+					src = "images/matlab/MATLAB Onramp.jpg";
+					alt = "MATLAB Onramp Certificate";
+					
+				} else if (matlabValue == "statistics") {
+					src = "images/matlab/Statistics Onramp.jpg";
+					alt = "Statistics Onramp Certificate";
+					
+				} else if (matlabValue == "visualization") {
+					src = "images/matlab/Visualization in MATLAB.jpg";
+					alt = "Visualization in MATLAB Certificate";
+				}
+
+				docDisplay.src = src;
+				docDisplay.alt = alt;
+			}
+			
 			docSelect.addEventListener("change", updateDocument)
+			matlabSelect.addEventListener("change", updateMatlabCertificate);
 			updateDocument();
 		</script>
 	</body>
