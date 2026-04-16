@@ -1,25 +1,44 @@
-/*------------
-nav formatting
-------------*/
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+
 nav {
-	background: #91b0ed;
+	background: rgba(255, 255, 255, 0.06);
+	backdrop-filter: blur(16px);
+	-webkit-backdrop-filter: blur(16px);
 	width: 100%;
 	display: flex;
-	justify-content: space-between;
-	padding: 6px;
-	box-shadow: 2px 2px 20px rgba(0,0,0,0.3);
-	font-size: 2vw;
+	justify-content: center;
+	gap: 4px;
+	padding: 10px 20px;
+	border-bottom: 1px solid rgba(252, 186, 18, 0.15);
+	position: sticky;
+	top: 0;
+	z-index: 100;
 }
 
 nav > a {
-	color: black;
+	color: rgba(255,255,255,0.75);
 	text-decoration: none;
-	padding: 10px 30px;
-	border-radius: 12px;
+	padding: 9px 28px;
+	border-radius: 6px;
+	font-family: 'Barlow Condensed', sans-serif;
+	font-size: 15px;
+	font-weight: 600;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	transition: all 0.2s ease;
+	border: 1px solid transparent;
 }
 
 nav > a:hover {
-	transition: 0.25s;
-	background: midnightblue;
+	background: rgba(252, 186, 18, 0.12);
 	color: #FCBA12;
+	border-color: rgba(252, 186, 18, 0.3);
+}
+
+nav > a.active {
+	color: #FCBA12;
+	background: rgba(252, 186, 18, 0.1);
+	border-color: rgba(252, 186, 18, 0.25);
 }

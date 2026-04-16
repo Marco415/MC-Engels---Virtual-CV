@@ -7,151 +7,107 @@
 		<meta charset="UTF-8">
 		<title>MC Engels Virtual CV - Certificates</title>
 		
-		<!--link to style sheets and icon-->
 		<link rel="stylesheet" href="styles_nav.css">
 		<link rel="stylesheet" href="styles_text.css">
 		<link rel="stylesheet" href="styles_visuals.css">
 		<link rel="icon" type="image/x-icon" href="images/favicon.ico">
-		
-		<!--header section-->
-		<header>
-			<div class="heading">
-				<h1>Marco Engels Virtual Curriculum Vitae</h1>
-			</div>
-		</header>
 	</head>
 	<body>
-		<!--navigation bar-->
+		<!-- Header -->
+		<header class="heading">
+			<h1>Marco Engels</h1>
+			<p class="subtitle">Virtual Curriculum Vitae</p>
+		</header>
+
+		<!-- Navigation -->
 		<nav>
-			<a href="index.html" title="Go To Home Page"><b>Home</b></a>
-			<a href="vcv_resume.html" title="Go To Resume Page"><b>Resume</b></a>
-			<a href="vcv_projects.html" title="Go To Projects Page"><b>Projects</b></a>
-			<a href="vcv_certificates.html" title="Go To Certificates Page"><b>Certificates</b></a>
+			<a href="index.html" title="Go To Home Page">Home</a>
+			<a href="vcv_resume.html" title="Go To Resume Page">Resume</a>
+			<a href="vcv_projects.html" title="Go To Projects Page">Projects</a>
+			<a href="vcv_certificates.html" class="active" title="Go To Certificates Page">Certificates</a>
 		</nav>
-		
-		<!--certificate selection-->
-		<div style="text-align:center; padding:5px;">
-			<form>
-				<label for="certificateSelect">Select a certificate to view: </label>
+
+		<!-- Certificate selector -->
+		<div class="select-bar">
+			<div class="select-group">
+				<label for="certificateSelect">Certificate</label>
 				<select id="certificateSelect" name="certificate" title="Select a certificate from the list">
 					<option value="cybersecurity" selected>Introduction to Cyber Security</option>
 					<option value="packettracer">Introduction to Packet Tracer</option>
 					<option value="goldenkey">Golden Key Member Certificate</option>
 					<option value="matlab">MATLAB Onramps</option>
 				</select>
-				
-				<!-- MATLAB sub-selection -->
-				<div id="matlabSelectContainer" style="margin-top:10px; display:none;">
-					<label for="matlabSelect">Select MATLAB certificate: </label>
-					<select id="matlabSelect">
-						<option value="app_building">App Building Onramp</option>
-						<option value="computer_vision">Computer Vision Onramp</option>
-						<option value="core_matlab_skills">Core MATLAB Skills</option>
-						<option value="data_analysis">Data Analysis in MATLAB</option>
-						<option value="deep_learning">Deep Learning Onramp</option>
-						<option value="image_processing">Image Processing Onramp</option>
-						<option value="machine_learning">Machine Learning Onramp</option>
-						<option value="matlab_onramp">MATLAB Onramp</option>
-						<option value="statistics">Statistics Onramp</option>
-						<option value="visualization">Visualization in MATLAB</option>
-					</select>
-				</div>
-			</form>
+			</div>
+
+			<div id="matlabSelectContainer" style="display:none;" class="select-group">
+				<label for="matlabSelect">MATLAB Course</label>
+				<select id="matlabSelect">
+					<option value="app_building">App Building Onramp</option>
+					<option value="computer_vision">Computer Vision Onramp</option>
+					<option value="core_matlab_skills">Core MATLAB Skills</option>
+					<option value="data_analysis">Data Analysis in MATLAB</option>
+					<option value="deep_learning">Deep Learning Onramp</option>
+					<option value="image_processing">Image Processing Onramp</option>
+					<option value="machine_learning">Machine Learning Onramp</option>
+					<option value="matlab_onramp">MATLAB Onramp</option>
+					<option value="statistics">Statistics Onramp</option>
+					<option value="visualization">Visualization in MATLAB</option>
+				</select>
+			</div>
 		</div>
-		
-		<!--certificate display-->
-		<div style="text-align:center;">
-			<img src="images/Introduction_to_Cyber_Security_certificate.jpg" alt="Introduction to Cyber Security certificate" id="certificateDisplay" class="image">
+
+		<!-- Certificate display -->
+		<div class="image-frame">
+			<img src="images/Introduction_to_Cyber_Security_certificate.jpg" 
+			     alt="Introduction to Cyber Security certificate" 
+			     id="certificateDisplay" 
+			     class="image">
 		</div>
-		
-		<!--function to load images-->
+
 		<script>
-			const docSelect = document.getElementById("certificateSelect");
-			const matlabSelect = document.getElementById("matlabSelect");
-			const matlabContainer = document.getElementById("matlabSelectContainer");
-			const docDisplay = document.getElementById("certificateDisplay");
+			const docSelect      = document.getElementById("certificateSelect");
+			const matlabSelect   = document.getElementById("matlabSelect");
+			const matlabContainer= document.getElementById("matlabSelectContainer");
+			const docDisplay     = document.getElementById("certificateDisplay");
 
 			function updateDocument() {
-				const selectedDoc = docSelect.value;
-				var src, alt;
-				
-				// Hide MATLAB dropdown by default
+				const val = docSelect.value;
 				matlabContainer.style.display = "none";
-				
-				if (selectedDoc == "cybersecurity") {
-					src = "images/Introduction_to_Cyber_Security_certificate.jpg";
-					alt = "Introduction to Cyber Security certificate";
 
-				} else if (selectedDoc == "packettracer") {
-					src = "images/Introduction_to_Packet_Tracer_certificate.jpg";
-					alt = "Introduction to Packet Tracer certificate";
-
-				} else if (selectedDoc == "goldenkey") {
-					src = "images/Golden_Key_Member_Certificate_-_Marthinus_Christoffel_Engels.jpg";
-					alt = "Golden Key Member Certificate";
-				} else if (selectedDoc == "matlab") {
-					// Show MATLAB dropdown
-					matlabContainer.style.display = "block";
+				if (val === "cybersecurity") {
+					docDisplay.src = "images/Introduction_to_Cyber_Security_certificate.jpg";
+					docDisplay.alt = "Introduction to Cyber Security certificate";
+				} else if (val === "packettracer") {
+					docDisplay.src = "images/Introduction_to_Packet_Tracer_certificate.jpg";
+					docDisplay.alt = "Introduction to Packet Tracer certificate";
+				} else if (val === "goldenkey") {
+					docDisplay.src = "images/Golden_Key_Member_Certificate_-_Marthinus_Christoffel_Engels.jpg";
+					docDisplay.alt = "Golden Key Member Certificate";
+				} else if (val === "matlab") {
+					matlabContainer.style.display = "flex";
 					updateMatlabCertificate();
-					return;
 				}
-				
-				docDisplay.setAttribute("src", src);
-				docDisplay.setAttribute("alt", alt);
 			}
-			
+
 			function updateMatlabCertificate() {
-				const matlabValue = matlabSelect.value;
-
-				let src = "";
-				let alt = "";
-
-				if (matlabValue == "app_building") {
-					src = "images/matlab/App Building Onramp.jpg";
-					alt = "App Building Onramp Certificate";
-					
-				} else if (matlabValue == "computer_vision") {
-					src = "images/matlab/Computer Vision Onramp.jpg";
-					alt = "Computer Vision Onramp Certificate";
-					
-				} else if (matlabValue == "core_matlab_skills") {
-					src = "images/matlab/Core MATLAB Skills.jpg";
-					alt = "Core MATLAB Skills Certificate";
-					
-				} else if (matlabValue == "data_analysis") {
-					src = "images/matlab/Data Analysis in MATLAB.jpg";
-					alt = "Data Analysis in MATLAB Certificate";
-					
-				} else if (matlabValue == "deep_learning") {
-					src = "images/matlab/Deep Learning Onramp.jpg";
-					alt = "Deep Learning Onramp Certificate";
-					
-				} else if (matlabValue == "image_processing") {
-					src = "images/matlab/Image Processing Onramp.jpg";
-					alt = "Image Processing Onramp Certificate";
-					
-				} else if (matlabValue == "machine_learning") {
-					src = "images/matlab/Machine Learning Onramp.jpg";
-					alt = "Machine Learning Onramp Certificate";
-					
-				} else if (matlabValue == "matlab_onramp") {
-					src = "images/matlab/MATLAB Onramp.jpg";
-					alt = "MATLAB Onramp Certificate";
-					
-				} else if (matlabValue == "statistics") {
-					src = "images/matlab/Statistics Onramp.jpg";
-					alt = "Statistics Onramp Certificate";
-					
-				} else if (matlabValue == "visualization") {
-					src = "images/matlab/Visualization in MATLAB.jpg";
-					alt = "Visualization in MATLAB Certificate";
-				}
-
-				docDisplay.src = src;
-				docDisplay.alt = alt;
+				const names = {
+					app_building:      "App Building Onramp",
+					computer_vision:   "Computer Vision Onramp",
+					core_matlab_skills:"Core MATLAB Skills",
+					data_analysis:     "Data Analysis in MATLAB",
+					deep_learning:     "Deep Learning Onramp",
+					image_processing:  "Image Processing Onramp",
+					machine_learning:  "Machine Learning Onramp",
+					matlab_onramp:     "MATLAB Onramp",
+					statistics:        "Statistics Onramp",
+					visualization:     "Visualization in MATLAB"
+				};
+				const name = names[matlabSelect.value];
+				docDisplay.src = `images/matlab/${name}.jpg`;
+				docDisplay.alt = `${name} Certificate`;
 			}
-			
-			docSelect.addEventListener("change", updateDocument)
+
+			docSelect.addEventListener("change", updateDocument);
 			matlabSelect.addEventListener("change", updateMatlabCertificate);
 			updateDocument();
 		</script>
