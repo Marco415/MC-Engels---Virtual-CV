@@ -263,6 +263,35 @@
 	opacity: 1;
 }
 
+.project-video-link {
+	margin-top: 20px;
+	padding-top: 16px;
+	border-top: 1px solid var(--border);
+}
+
+.project-video-link a {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	background: rgba(252, 186, 18, 0.1);
+	border: 1px solid rgba(252, 186, 18, 0.3);
+	color: var(--gold);
+	padding: 9px 20px;
+	border-radius: 6px;
+	font-family: 'Barlow Condensed', sans-serif;
+	font-size: 14px;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	text-decoration: none;
+	transition: all 0.2s;
+}
+
+.project-video-link a:hover {
+	background: rgba(252, 186, 18, 0.18);
+	text-decoration: none;
+	opacity: 1;
+}
+
 /* ------ Resume image ------ */
 .resume-wrap {
 	max-width: 820px;

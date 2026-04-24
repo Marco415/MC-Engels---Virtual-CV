@@ -32,7 +32,8 @@
 			<div class="select-group">
 				<label for="certificateSelect">Certificate</label>
 				<select id="certificateSelect" name="certificate" title="Select a certificate from the list">
-					<option value="cybersecurity" selected>Introduction to Cyber Security</option>
+					<option value="bscit" selected>BSc in Information Technology</option>
+					<option value="cybersecurity">Introduction to Cyber Security</option>
 					<option value="packettracer">Introduction to Packet Tracer</option>
 					<option value="goldenkey">Golden Key Member Certificate</option>
 					<option value="matlab">MATLAB Onramps</option>
@@ -74,7 +75,10 @@
 				const val = docSelect.value;
 				matlabContainer.style.display = "none";
 
-				if (val === "cybersecurity") {
+				if (val === "bscit") {
+					docDisplay.src = "images/BSc_IT.jpg";
+					docDisplay.alt = "BSc in Information Technology";
+				} else if (val === "cybersecurity") {
 					docDisplay.src = "images/Introduction_to_Cyber_Security_certificate.jpg";
 					docDisplay.alt = "Introduction to Cyber Security certificate";
 				} else if (val === "packettracer") {

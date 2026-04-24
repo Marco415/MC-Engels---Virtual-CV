@@ -53,30 +53,40 @@
 						&#x279A; View on GitHub
 					</a>
 				</div>
+				<div class="project-video-link">
+					<a href="" id="videoLink" target="_blank" rel="noopener noreferrer" title="Play video">
+						&#x279A; Play video
+					</a>
+				</div>
 			</div>
 		</div>
 
 		<script>
 			const projectSelect = document.getElementById("projectSelect");
 			const projectLink   = document.getElementById("projectLink");
+			const videoLink		= document.getElementById("videoLink");
 			const projectTitle  = document.getElementById("projectTitle");
 			const projectLinkWrap = document.querySelector(".project-link-wrap");
+			const projectVideoLink = document.querySelector(".project-video-link");
 
 			const projects = {
 				securitycompany: {
 					title: "Eagle Eye Security System",
 					description: "This project was done as part of a module group project where we had to design and create an application. Our group decided on a security company management system. We created a fictional company, Eagle Eye Security, and created an application to manage shifts, sectors, incidents, equipment, and personnel.",
-					link: "https://github.com/Marco415/Eagle-Eye-Security-Management-App"
+					link: "https://github.com/Marco415/Eagle-Eye-Security-Management-App",
+					vlink: ""
 				},
 				dungeonexplorer: {
 					title: "Dungeon Explorer",
 					description: "This project was done as a creative project for a module to test our understanding of coding concepts. I created a text-based dungeon explorer where you fight a monster. If you defeat the monster, you move on to the next round. The monsters keep getting slightly more difficult with each round, but the player can also choose upgrades after each round won.",
-					link: "https://github.com/Marco415/Dungeon-Explorer"
+					link: "https://github.com/Marco415/Dungeon-Explorer",
+					vlink: ""
 				},
 				asteroiddefence: {
 					title: "Asteroids Tower Defense",
-					description: "This project was part of a module group project where we worked with an honours student as our project manager. The project required us to develop an Asteroids-inspired tower defense game, where the goal is to protect the earth from incoming asteroids. Different asteroid types can spawn, which have different effects. Asteroids drop materials upon being destroyed, which can be used to add or upgrade turrets or activate abilities. Different turrets can be placed that have different effects. I mainly fulfilled the role of backend developer. Due to the large file size, the project could not be uploaded to GitHub.",
-					link: ""
+					description: "This project was part of a module group project where we worked with an honours student as our project manager. The project required us to develop an Asteroids-inspired tower defense game, where the goal is to protect the earth from incoming asteroids. Different asteroid types can spawn, which have different effects. Asteroids drop materials upon being destroyed, which can be used to add or upgrade turrets or activate abilities. Different turrets can be placed that have different effects. I mainly fulfilled the role of backend developer. Project collaborators include Neill Greeff, Hein Hechter, Arran Kloppers, Mncedisi Motsepe, Dieter Roux, and André De Goede as project manager. Due to the large file size, the project could not be uploaded to GitHub and a demo video has been added instead.",
+					link: "",
+					vlink: "videos/CMPG323 Group Project Asteriod Game Group 2.mp4"
 				}
 			};
 
@@ -89,7 +99,13 @@
 					projectLinkWrap.style.display = "block";
 				} else {
 					projectLinkWrap.style.display = "none";
-				}	
+				}
+				if (proj.vlink) {
+					videoLink.setAttribute("href", proj.vlink);
+					projectVideoLink.style.display = "block";
+				} else {
+					projectVideoLink.style.display = "none";
+				}
 			}
 
 			projectSelect.addEventListener("change", updateDocument);
