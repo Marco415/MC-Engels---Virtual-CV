@@ -35,6 +35,9 @@
 					<option value="securitycompany" selected>Eagle Eye Security System</option>
 					<option value="dungeonexplorer">Dungeon Explorer</option>
 					<option value="asteroiddefence">Asteroids Tower Defense</option>
+					<option value="datastreaming">Real-Time Data Streaming Pipeline</option>
+					<option value="flickfingerboardai">Flick Fingerboard AI Project</option>
+					<option value="histogramprocessing">Histogram Processing</option>
 				</select>
 			</div>
 		</div>
@@ -78,7 +81,7 @@
 				},
 				dungeonexplorer: {
 					title: "Dungeon Explorer",
-					description: "This project was done as a creative project for a module to test our understanding of coding concepts. I created a text-based dungeon explorer where you fight a monster. If you defeat the monster, you move on to the next round. The monsters keep getting slightly more difficult with each round, but the player can also choose upgrades after each round won.",
+					description: "This project was done as a creative project to test our understanding of coding concepts. I created a text-based dungeon explorer where you fight a monster. If you defeat the monster, you move on to the next round. The monsters keep getting slightly more difficult with each round, but the player can also choose upgrades after each round won.",
 					link: "https://github.com/Marco415/Dungeon-Explorer",
 					vlink: ""
 				},
@@ -87,6 +90,24 @@
 					description: "This project was part of a module group project where we worked with an honours student as our project manager. The project required us to develop an Asteroids-inspired tower defense game, where the goal is to protect the earth from incoming asteroids. Different asteroid types can spawn, which have different effects. Asteroids drop materials upon being destroyed, which can be used to add or upgrade turrets or activate abilities. Different turrets can be placed that have different effects. I mainly fulfilled the role of backend developer. Project collaborators include Neill Greeff, Hein Hechter, Arran Kloppers, Mncedisi Motsepe, Dieter Roux, and André De Goede as project manager. Due to the large file size, the project could not be uploaded to GitHub and a demo video has been added instead.",
 					link: "",
 					vlink: "videos/CMPG323 Group Project Asteriod Game Group 2.mp4"
+				},
+				datastreaming: {
+					title: "Real-Time Data Streaming Pipeline",
+					description: "This project required setting up a real-time data streaming pipeline. Datasets were obtained from kaggle.com on weather data about cities around the world. This data is ingested into Apache Kafka to simulate real-time data streaming, after which it is sent to Apache Flink for processing. There a classification ML model, which was trained on another weather dataset, predicts if the weather is sunny, cloudy, rainy, or snowy based on the data. This data is then sent back to Apache Kafka, stored in an Apache Cassandra database, and finally presented on an Apache Superset dashboard.",
+					link: "https://github.com/Marco415/Real-time-data-streaming-pipeline",
+					vlink: ""
+				},
+				flickfingerboardai: {
+					title: "Flick Fingerboard AI Project",
+					description: "Flick fingerboard is a 2 or 4 player game where players have to shoot all their discs into pockets to win the game. The project attempted to teach an AI agent to play the game. Three agents were trained: one training against a random bot, one training against a heuristic bot, and one training against both a heuristic bot and a snapshot of itself. The third agent that trained against the heuristic bot and itself achieved the best results, improving greatly between the two phases and achieving the highest average reward per game.",
+					link: "https://github.com/Marco415/Flick-fingerboard-AI-project",
+					vlink: ""
+				},
+				histogramprocessing: {
+					title: "Histogram Processing",
+					description: "Histogram processing is a technique in image processing where the pixels of an image are represented as a histogram and subsequntly processed. Several MATLAB live scripts are included that performs different techniques such as equalisation and specification on images.",
+					link: "https://github.com/Marco415/Histogram-processing",
+					vlink: ""
 				}
 			};
 
