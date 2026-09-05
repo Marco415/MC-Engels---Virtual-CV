@@ -36,6 +36,9 @@
 					<option value="goldenkey">Golden Key Member Certificate</option>
 					<option value="cybersecurity">Introduction to Cyber Security</option>
 					<option value="packettracer">Introduction to Packet Tracer</option>
+					<option value="neo4jfundamentals">Neo4j Fundamentals</option>
+					<option value="graphdatamodelling">Graph Data Modeling Fundamentals</option>
+					<option value="neo4jgenai">Neo4j & GenerativeAI Fundamentals</option>
 					<option value="matlab">MATLAB Onramps</option>
 				</select>
 			</div>
@@ -76,16 +79,25 @@
 				matlabContainer.style.display = "none";
 
 				if (val === "bscit") {
-					docDisplay.src = "images/BSc_IT.jpg";
+					docDisplay.src = "images/certificates/BSc_IT.jpg";
 					docDisplay.alt = "BSc in Information Technology";
 				} else if (val === "cybersecurity") {
-					docDisplay.src = "images/Introduction_to_Cyber_Security_certificate.jpg";
+					docDisplay.src = "images/certificates/Introduction_to_Cyber_Security_certificate.jpg";
 					docDisplay.alt = "Introduction to Cyber Security certificate";
 				} else if (val === "packettracer") {
-					docDisplay.src = "images/Introduction_to_Packet_Tracer_certificate.jpg";
+					docDisplay.src = "images/certificates/Introduction_to_Packet_Tracer_certificate.jpg";
 					docDisplay.alt = "Introduction to Packet Tracer certificate";
 				} else if (val === "goldenkey") {
-					docDisplay.src = "images/Golden_Key_Member_Certificate_-_Marthinus_Christoffel_Engels.jpg";
+					docDisplay.src = "images/certificates/Golden_Key_Member_Certificate_-_Marthinus_Christoffel_Engels.jpg";
+					docDisplay.alt = "Golden Key Member Certificate";
+				} else if (val === "neo4jfundamentals") {
+					docDisplay.src = "images/certificates/Neo4j Fundamentals Certificate _ GraphAcademy_page-0001.jpg";
+					docDisplay.alt = "Golden Key Member Certificate";
+				} else if (val === "graphdatamodelling") {
+					docDisplay.src = "images/certificates/Graph Data Modeling Fundamentals Certificate _ GraphAcademy_page-0001.jpg";
+					docDisplay.alt = "Golden Key Member Certificate";
+				} else if (val === "neo4jgenai") {
+					docDisplay.src = "images/certificates/Neo4j & GenerativeAI Fundamentals Certificate _ GraphAcademy_page-0001.jpg";
 					docDisplay.alt = "Golden Key Member Certificate";
 				} else if (val === "matlab") {
 					matlabContainer.style.display = "flex";
@@ -107,7 +119,7 @@
 					visualization:     "Visualization in MATLAB"
 				};
 				const name = names[matlabSelect.value];
-				docDisplay.src = `images/matlab/${name}.jpg`;
+				docDisplay.src = `images/certificates/matlab/${name}.jpg`;
 				docDisplay.alt = `${name} Certificate`;
 			}
 
